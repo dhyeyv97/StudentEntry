@@ -1,0 +1,247 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+.header {
+    background-color: rgb(171, 218, 244) !important;
+}
+
+.action {
+  display: flex;
+  padding-left: 50px !important;
+}
+
+.main-box {
+    display: flex;
+    justify-content: space-around;
+}
+.alertBox {
+    display: flex;
+    justify-content: center;
+}
+.btn-edit {
+    padding: 6px 20px !important;
+    display: none;
+}
+.th-head {
+    color: rgb(10, 99, 241);
+    font-size: 18px;
+    font-weight: 700;
+}
+.record-btn {
+    justify-content: flex-end;
+    height: inherit;
+}
+
+.gen {
+font-size: 18px;
+} 
+.modal-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.inps {
+font-size: 18px;
+display: flex;
+align-items: center;
+width: 60%;
+gap: 10px;
+}
+
+td {
+    font-size: 16px;
+    font-weight: 450;
+}
+#nameAdd , #emAdd {
+width: 180px;
+}
+#nameEdit , #emEdit {
+    width: 180px;
+    }
+    
+
+.divlab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lab {
+    font-size: 18px;
+    font-weight: 700;
+    width: 40%;
+}
+
+.main-input {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 8px;
+}
+
+.delete-body {
+    font-size: 20px;
+    font-weight: 800;
+    word-spacing: 2px;
+}
+
+.i-warn {
+    color: red;
+    margin-left: 5px
+}
+
+#name_error , #email_error , #age_error {
+    color: red;
+    font-weight: 600;
+}
+.formError {
+    text-align: center;
+    color: red;
+    font-size: 16px;
+    margin-left: 80px;
+    font-weight: 500;
+}
+
+
+/* Add Student Modal */
+.modalAdd {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    margin-top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+
+}
+
+.modal-contentA {
+background-color: #faf7f7;
+margin: 20px auto; /* 15% from the top and centered */
+padding: 10px;
+border: 1px solid #888;
+border-radius: 5px ;
+width: 30%; /* Could be more or less, depending on screen size */
+-webkit-animation-name: animatetop;
+-webkit-animation-duration: 0.5s;
+animation-name: animatetop;
+animation-duration: 0.5s
+}
+
+@-webkit-keyframes animatetop {
+from {top:-300px; opacity:0} 
+to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+from {top:-300px; opacity:0}
+to {top:0; opacity:1}
+}
+
+
+
+/* Edit Modal  */
+
+.modalEdit {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    margin-top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+
+}
+
+.modal-contentE {
+background-color: #faf7f7;
+margin: 20px auto; /* 15% from the top and centered */
+padding: 10px;
+border: 1px solid #888;
+border-radius: 5px ;
+width: 30%; /* Could be more or less, depending on screen size */
+-webkit-animation-name: animatetop;
+-webkit-animation-duration: 0.5s;
+animation-name: animatetop;
+animation-duration: 0.5s
+
+}
+
+@-webkit-keyframes animatetop {
+from {top:-300px; opacity:0} 
+to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+from {top:-300px; opacity:0}
+to {top:0; opacity:1}
+}
+
+
+/* Success Modal */
+
+.modalSuccess {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 30px;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+  }
+  
+  /* Modal Content */
+  .modalS-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 18%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-200px; opacity:0} 
+    to {top:-100px; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-200px; opacity:0}
+    to {top:-100px; opacity:1}
+  }
+  
+  /* The Close Button */
+
+  .modalS-header {
+    padding: 2px 16px;
+    background-color: #128fef;
+    color: rgb(29, 84, 221);
+  }
+  .successAlert {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);;
+  }

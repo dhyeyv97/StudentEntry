@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Admission Form </title>
+ 
+
+    <link rel="stylesheet" href="student.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+
+    
+
+    <!--Admission Entries-->
+
+    <div class="container">
+        <div class="main-box">
+            <div class="alertBox">
+           
+            </div>
+               <div class="record-btn">
+            <button type="button" class="btn btn-primary btn-add" id="addRecord">
+                Add Records
+            </button>
+        </div>
+    </div>
+        <div class="row">
+            <table class="table table-striped" id="tables">
+                <div class="bg-info bg-gradient">
+                <thead>
+                    <tr class="header">
+                        <th class="th-head" scope="col">#</th>
+                        <th class="th-head" scope="col">Name</th>
+                        <th class="th-head" scope="col">E-mail</th>
+                        <th class="th-head" scope="col">D.O.B</th>
+                        <th class="th-head" scope="col">Gender</th>
+                        <th class="th-head" scope="col">Subjects</th>
+                        <th class="th-head" scope="col">Specialization</th>
+                        <th class="th-head" scope="col">Sports Activity</th>
+                        <th class="th-head action" scope="col">Action</th>
+                        
+                    </tr>
+                </thead>
+            </div>
+                <tbody id="table">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Dhyey Vithalani</td>
+                        <td>dhyey97@gmail.com</td>
+                        <td>09/10/1997</td>
+                        <td>Male</td>
+                        <td>Maths, Science</td>
+                        <td>Technonogy</td>
+                        <td>80%</td>
+                        <td>
+                            <button id="editRecord" type="button" class="btn btn-info btn-edit mx-2">
+                                Edit
+                            </button>
+                            <button type="button" class="btn btn-danger btn-del">
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!--Add Student Details-->
+
+    <section id="modal1">
+        <div class="modalAdd" id="exampleModal">
+                <div class="modal-contentA" id="addContent">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Users</h5>
+                        <button type="button" class="btn-close" id="closebtn"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="input-group main-input">
+
+                                        <div id="name">
+                                    <div class="divlab">
+                                        <label class="lab">Name :</label>
+                                         <div class="inps"> <input id= "nameAdd" name="firstName"/> 
+                                        </div>                                    
+                                    </div>
+                                    <div class="formError"></div>
+                                        </div>
+
+                                        <div id="email">
+                                    <div class="divlab">
+                                        <label class="lab" >Email Address : </label>
+                                        <div class="inps"><input id= "emAdd" name="email"/>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="formError"></div>
+                                        </div>
+
+                                        <div id="gender">
+                                     <div class="divlab">                                       
+                                        <label class="lab">Gender :</label>
+                                        <div class="inps" id="genders">
+                                            <label class="gen"><input type="radio" class="gen" id= "gen1Add" name="gender" value="Male"/> Male</label>
+                                            <label class="gen"><input type="radio" class="gen" id= "gen2Add" name="gender" value="Female"/> Female</label>
+                                       
+                                        </div>
+                                       
+                                     </div>
+                                     <div class="formError"></div>
+                                        </div>
+
+
+                                        <div id="date">
+                                    <div class="divlab">
+                                        <label class="lab">Date of Birth :</label> 
+                                        <div class="inps"><input id= "dateAdd" type="date" name="birthDate" placeholder=" dd-mm-yyyy" value=""
+                                            max="2005-12-31">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="formError"></div>
+                                        </div>
+
+                                        <div id="subject">
+                                    <div class="divlab">
+                                        <label class="lab">Subjects :</label>
+                                        <div class="inps" id="subjects">
+                                        
+                                        <input type="checkbox" id="subject1" class="sub" name="subject" value="Maths ">
+                                        <label for="subject1"> Maths</label>
+                                        
+                                        
+                                        <input type="checkbox" id="subject2" class="sub" name="subject" value="Science ">
+                                        <label for="subject2"> Science</label>
+                                            
+                                        
+                                        <input type="checkbox" id="subject3" class="sub" name="subject" value="English ">
+                                        <label for="subject3"> English</label>
+                                            
+                                        
+                                        </div>
+
+                                         </div>
+                                         <div class="formError"></div>
+                                        </div>
+
+                                        <div id="special">
+                                     <div class="divlab">
+                                            <label class="lab">
+                                              Specialization :
+                                            </label>
+                                            <div class="inps">
+                                              <select id="specialize">
+                                                <option id="opNone">--None--</option>
+                                                <option id= "op1Add">BBA</option>
+                                                <option id= "op2Add">Bsc IT</option>
+                                                <option id= "op3Add">BCA</option>
+                                                <option id= "op4Add">Bcom</option>
+                                                <option id= "op5Add">BA</option>
+                                              </select>
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="formError"></div>
+                                        </div>
+
+                                        <div id="range">
+                                        <div class="divlab">
+                                            <label class="lab" for="vol"> <p>Interest in Sports</p>
+                                                <p> (from 0 to 100) :</p> </label>
+                                            <div class="inps"><input type="range" id="rAdd" name="vol" value="0">                                    
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="formError"></div>
+                                     </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" id="closeSub" class="btn btn-secondary">
+                            Close
+                        </button>
+                        <button id="submit1" type="button" method="post"
+                            class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+     <!--Edit Student Details-->
+
+     <section id="modal2">
+        <div class="modalEdit" id="exampleModalEdit">
+                <div class="modal-contentE" id="editContent">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Users</h5>
+                        <button type="button" class="btn-close" id="edClose"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+
+                                    <div class="input-group main-input">
+
+                                        <div id="nameE">
+                                    <div class="divlab">
+                                        <label class="lab">Name :</label>
+                                         <div class="inps" id="nameEdits"> <input id= "nameEdit" name="firstName"/> 
+                                        </div>                                    
+                                    </div>
+                                    <div class="formError"></div>
+                                        </div>
+
+                                        <div id="emailE">
+                                    <div class="divlab">
+                                        <label class="lab" >Email Address : </label>
+                                        <div class="inps" id="emailEdits"><input id= "emEdit" name="email"/>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="formError"></div>
+                                        </div>
+
+                                        <div id="genderE">
+                                     <div class="divlab">                                       
+                                        <label class="lab">Gender :</label>
+                                        <div class="inps" id="gendersE">
+                                            <label class="gen"><input type="radio" class="gene1" id= "gen1Edit" name="gendere" value="Male"/> Male</label>
+                                            <label class="gen"><input type="radio" class="gene2" id= "gen2Edit" name="gendere" value="Female"/> Female</label>                                   
+                                        </div>
+                                       
+                                     </div>
+                                     <div class="formError"></div>
+                                        </div>
+
+
+                                        <div id="dateE">
+                                    <div class="divlab">
+                                        <label class="lab">Date of Birth :</label> 
+                                        <div class="inps" id="dateEdits"><input id= "dateEdit" type="date" name="birthDate" placeholder=" dd-mm-yyyy" value=""
+                                            max="2005-12-31">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="formError"></div>
+                                        </div>
+
+                                        <div id="subjectE">
+                                    <div class="divlab">
+                                        <label class="lab">Subjects :</label>
+                                        <div class="inps" id="subjectes">
+                                        
+                                        <input type="checkbox" id="subject1e" class="sube1" name="subjecte" value="Maths ">
+                                        <label for="subject1"> Maths</label>
+                                        
+                                        <input type="checkbox" id="subject2e" class="sube2" name="subjecte" value="Science ">
+                                        <label for="subject2"> Science</label>
+                                      <input type="checkbox" id="subject3e" class="sube3" name="subjecte" value="English ">
+                                        <label for="subject3"> English</label>
+                                        
+                                        </div>
+
+                                    </div>
+                                    <div class="formError"></div>
+                                        </div>
+
+                                        <div id="specialE">
+                                     <div class="divlab">
+                                            <label class="lab">
+                                              Specialization :
+                                            </label>
+                                            <div class="inps" id="specializes">
+                                              <select id="specializeE">
+                                                <option id="opNoneE">--None--</option>
+                                                <option id= "op1Edit">BBA</option>
+                                                <option id= "op2Edit">Bsc IT</option>
+                                                <option id= "op3Edit">BCA</option>
+                                                <option id= "op4Edit">Bcom</option>
+                                                <option id= "op5Edit">BA</option>
+                                              </select>
+                                              
+                                            </div>
+                                        </div>
+                                        <div class="formError"></div>
+                                        </div>
+
+                                        <div id="rangeE">
+                                        <div class="divlab">
+                                            <label class="lab" for="vol"> <p>Interest in Sports</p>
+                                                <p> (from 0 to 100) :</p> </label>
+                                            <div class="inps" id="rangess"><input type="range" id="rEdit" name="vol">                                    
+                                            </div>                                   
+                                        </div>
+                                        <div class="formError"></div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" id="closeEd" class="btn btn-secondary">
+                            Close
+                        </button>
+                        <button id="save1" type="button" method="post"
+                            class="btn btn-primary">
+                            Save
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+     <!--Delete Modal-->
+
+     <div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">
+                     Delete Confirmation
+                 </h5>
+
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+                 Are You Sure You Want to Delete Details ?
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                     Close
+                 </button>
+                 <button type="button" id="deleteCnf" data-bs-dismiss="modal" class="btn btn-danger">
+                     Delete
+                 </button>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+
+ <!-- The Modal -->
+<div id="myModalSuccess" class="modalSuccess">
+
+    <!-- Modal content -->
+    <div class="modalS-content">
+      <div class="modalS-header">
+       <p class="successAlert" id="successAlert">Data Added Successfully!!</p>
+      </div>
+    </div>
+  </div>
+
+
+
+<script src="student.js"></script>
+<!-- <script src="studentLS.js"></script> -->
+<!-- <script src="addStudent.js"></script> -->
+<!-- <script src="editStudent.js"></script> -->
+<!-- <script src="deleteStudent.js"></script> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" 
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+     integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
